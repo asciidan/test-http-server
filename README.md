@@ -12,10 +12,10 @@ docker run --rm --name dan -p 3000:80 dan
 
 ## Build and run with JSON logs
 
-Use [`Dockerfile_withJsonLogs`](Dockerfile_withJsonLogs) to keep the same static file serving behavior while also printing a JSON heartbeat log every 5 seconds.
+Use [`withJsonLogs.Dockerfile`](withJsonLogs.Dockerfile) to keep the same static file serving behavior while also printing a JSON heartbeat log every 5 seconds.
 
 ```bash
-docker build -f Dockerfile_withJsonLogs -t dan-json-logs .
+docker build -f withJsonLogs.Dockerfile -t dan-json-logs .
 docker run --rm --name dan-json-logs -p 3000:80 dan-json-logs
 ```
 
