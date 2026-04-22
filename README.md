@@ -25,6 +25,15 @@ The container still serves [`files/test.html`](files/test.html) as the root page
 {"timestamp":"2026-03-27T09:00:00Z","level":"info","service":"static-http","message":"dummy heartbeat for testing long JSON log lines","interval_seconds":5,"details":{"component":"static-file-server","mode":"busybox-httpd","note":"this log line is intentionally a bit longer to exercise log buffering and transport"}}
 ```
 
+## Build and run with JSON logs and intentional termination
+
+Use [`withJsonLogsAndTermination.Dockerfile`](withJsonLogsAndTermination.Dockerfile) to test application crashes. It does the same as `withJsonLogs.Dockerfile`, but after 2 minutes it will output a JSON error log and exit with status 1.
+
+```bash
+docker build -f withJsonLogsAndTermination.Dockerfile -t dan-json-logs-term .
+docker run --rm --name dan-json-logs-term -p 3000:80 dan-json-logs-term
+```
+
 ## Run with Python
 
 ```bash
