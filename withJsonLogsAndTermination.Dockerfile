@@ -10,5 +10,5 @@ COPY start-with-json-logs-and-termination.sh /usr/local/bin/start-with-json-logs
 RUN chmod +x /usr/local/bin/start-with-json-logs-and-termination.sh
 
 USER static
-EXPOSE 80
+EXPOSE 3000
 CMD ["/usr/local/bin/start-with-json-logs-and-termination.sh"]

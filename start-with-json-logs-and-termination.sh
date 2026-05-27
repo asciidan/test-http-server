@@ -10,7 +10,7 @@ log_json() {
 }
 
 log_json &
-busybox httpd -f -v -p 80 &
+busybox httpd -f -v -p 3000 &
 
 sleep 120
 now="$(date -u +%Y-%m-%dT%H:%M:%SZ)"

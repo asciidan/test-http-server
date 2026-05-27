@@ -2,11 +2,11 @@
 
 ## Build and run in Docker
 
-A very lightweight image based on BusyBox v3.17 (around 4 MB) that serves files from the `files` directory on port 80. `test.html` is the default file that will be served when accessing the root URL.
+A very lightweight image based on BusyBox v3.17 (around 4 MB) that serves files from the `files` directory on port 3000. `test.html` is the default file that will be served when accessing the root URL.
 
 ```bash
 docker build -t dan .
-docker run --rm --name dan -p 3000:80 dan
+docker run --rm --name dan -p 3000:3000 dan
 # OR sh build.sh
 ```
 
@@ -16,7 +16,7 @@ Use [`withJsonLogs.Dockerfile`](withJsonLogs.Dockerfile) to keep the same static
 
 ```bash
 docker build -f withJsonLogs.Dockerfile -t dan-json-logs .
-docker run --rm --name dan-json-logs -p 3000:80 dan-json-logs
+docker run --rm --name dan-json-logs -p 3000:3000 dan-json-logs
 ```
 
 The container still serves [`files/test.html`](files/test.html) as the root page through BusyBox `httpd`, and stdout/stderr will include JSON log lines like:
@@ -31,7 +31,7 @@ Use [`withJsonLogsAndTermination.Dockerfile`](withJsonLogsAndTermination.Dockerf
 
 ```bash
 docker build -f withJsonLogsAndTermination.Dockerfile -t dan-json-logs-term .
-docker run --rm --name dan-json-logs-term -p 3000:80 dan-json-logs-term
+docker run --rm --name dan-json-logs-term -p 3000:3000 dan-json-logs-term
 ```
 
 ## Run with Python

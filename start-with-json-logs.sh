@@ -10,4 +10,4 @@ log_json() {
 }
 
 log_json &
-exec busybox httpd -f -v -p 80
+exec busybox httpd -f -v -p 3000

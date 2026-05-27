@@ -6,5 +6,5 @@ WORKDIR /home/static
 
 COPY files .
 RUN mv test.html index.html
-CMD ["busybox", "httpd", "-f", "-v", "-p", "80"]
-EXPOSE 80
+CMD ["busybox", "httpd", "-f", "-v", "-p", "3000"]
+EXPOSE 3000
